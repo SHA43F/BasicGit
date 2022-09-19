@@ -18,3 +18,15 @@ for(let i=0;i<lists.length;i++)
 {
     lists[i].style.fontWeight ="bold"
 }
+
+//New list item added with different class name
+let list2 = document.getElementsByClassName('new-list-item');
+
+list2[0].style.color = 'blue'
+list2[0].style.fontSize = '20px'
+
+//Get Element By Tag name
+
+var lis_tag = document.getElementsByTagName('li')
+
+lis_tag[4].style.alignSelf = 'center'
