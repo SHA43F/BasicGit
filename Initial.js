@@ -31,10 +31,20 @@
 
 // lis_tag[4].style.alignSelf = 'center'
 
-//Query Selector
-let secList = document.querySelector('.list-group-item:nth-child(2)');
-let triList = document.querySelector('.list-group-item:nth-child(3)');
+// //Query Selector
+// let secList = document.querySelector('.list-group-item:nth-child(2)');
+// let triList = document.querySelector('.list-group-item:nth-child(3)');
 
-secList.style.backgroundColor = 'green'
-triList.style.color = 'transparent'
+// secList.style.backgroundColor = 'green'
+// triList.style.color = 'transparent'
 
+//Query Selector All
+
+let secListAll = document.querySelectorAll('.list-group-item');
+let oddListAll = document.querySelectorAll('.list-group-item:nth-child(odd)');
+
+secListAll[1].style.color = 'green';
+for(let i=0;i<oddListAll.length;i++)
+{
+    oddListAll[i].style.backgroundColor = 'green'
+}
