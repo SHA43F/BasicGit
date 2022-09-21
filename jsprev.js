@@ -3,6 +3,7 @@ let inpName = document.querySelector('#name');
 let inpEmail = document.querySelector('#email');
 let msg = document.querySelector('.msg');
 let listVals = document.querySelector('#users')
+let itemIndex = 1
 
 form.addEventListener('submit', addNE)
 function addNE(e)
@@ -19,7 +20,8 @@ function addNE(e)
         let lis = document.createElement('li')
         lis.appendChild(document.createTextNode(`${inpName.value} : ${inpEmail.value}`))
         listVals.appendChild(lis)
-        localStorage.setItem(`${inpName.value}`, `${inpEmail.value}`)
+        localStorage.setItem(`item ${itemIndex}`, `${inpName.value} : ${inpEmail.value}`)
+        itemIndex+=1;
         inpName.value = ''
         inpEmail.value = ''
     }
