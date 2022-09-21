@@ -9,11 +9,11 @@ filt.addEventListener('keyup', filtval)
 function additem(e)
 {
     e.preventDefault();
-    let inputStr = document.getElementById('item').value
-    let inputDesc = document.getElementById('descript').value
+    let inputStr = document.getElementById('item')
+    let inputDesc = document.getElementById('descript')
     let newItem = document.createElement('li')
     newItem.className = 'list-group-item'
-    newItem.appendChild(document.createTextNode(inputStr+ ' '+inputDesc));
+    newItem.appendChild(document.createTextNode(inputStr.value+ ' '+inputDesc.value));
     items.appendChild(newItem)
     let deleteBtn = document.createElement('button')
     deleteBtn.className = "btn btn-danger btn-sm float-right delete"
@@ -27,7 +27,8 @@ function additem(e)
     editBtn.style.color = 'white'
     editBtn.style.marginRight = '5px'
     newItem.appendChild(editBtn)
-    
+    inputStr.value = ''
+    inputDesc.value = ''
 }
 
 function delVal(e)

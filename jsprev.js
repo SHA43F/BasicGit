@@ -3,7 +3,6 @@ let inpName = document.querySelector('#name');
 let inpEmail = document.querySelector('#email');
 let msg = document.querySelector('.msg');
 let listVals = document.querySelector('#users')
-let itemIndex = 1
 
 form.addEventListener('submit', addNE)
 function addNE(e)
@@ -20,8 +19,9 @@ function addNE(e)
         let lis = document.createElement('li')
         lis.appendChild(document.createTextNode(`${inpName.value} : ${inpEmail.value}`))
         listVals.appendChild(lis)
-        localStorage.setItem(`item ${itemIndex}`, `${inpName.value} : ${inpEmail.value}`)
-        itemIndex+=1;
+        let objItem = { name : inpName.value, email : inpEmail.value}
+        let objItem_ser = JSON.stringify(objItem)
+        localStorage.setItem('Item',objItem_ser)
         inpName.value = ''
         inpEmail.value = ''
     }
