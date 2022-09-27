@@ -1,26 +1,15 @@
-// 1
-function shouldCalled()
+let multiplyForTwo = function (x,y)
 {
-    console.log('Funcion Called');
+    console.log(x*y)
 }
-shouldCalled.call();
-
-// 4
-const student = {age:20};
-function printAge()
+let multiplyForThree = function (x)
 {
-    return this.age;
+    return function (y)
+    {
+        console.log(x*y)
+    }
 }
-console.log("Returning Student Age:"+printAge.call(student));
-
-//2
-function applyAge(addAge)
-{
-    return this.age+addAge;
-}
-const addAge=[10]
-console.log("Using apply: "+applyAge.apply(student, addAge));
-
-//3
-const returnBind = applyAge.bind(student);
-console.log("Using bind: "+returnBind(addAge))
+var multiplyByTwo = multiplyForTwo.bind(this,2);
+multiplyByTwo(5);
+var multiplyByThree = multiplyForThree(3);
+multiplyByThree(5);
